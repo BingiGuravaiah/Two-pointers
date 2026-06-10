@@ -1,3 +1,12 @@
+/*
+Variable Size Sliding Window
+
+You are given an array and an integer k. Find the maximum length of the subarray that contains at most k occurrences of 1.
+
+Example:
+Input: arr = [0,1,3,1,1,6,7,1,0,1], k = 2
+Output: 5
+*/
 class Myprogram {
     public static void main(String[] args) {
         int[] arr={0,1,3,1,6,7,1,0,1};
