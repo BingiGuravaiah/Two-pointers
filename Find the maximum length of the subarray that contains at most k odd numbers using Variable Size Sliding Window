@@ -1,0 +1,42 @@
+/*
+Variable Size Sliding Window
+
+You are given an array and an integer k. Find the maximum length
+of the subarray that contains at most k odd numbers.
+
+Example:
+Input:
+arr = [12, 1, 3, 1, 1, 6, 7, 1, 8, 1]
+k = 3
+
+Output:
+5
+*/
+
+class Myprogram {
+    public static void main(String[] args) {
+        int[] arr = {12, 1, 3, 1, 1, 6, 7, 1, 8, 1};
+        int ans = 0, l = 0, count = 0, k = 3;
+
+        for (int r = 0; r < arr.length; r++) {
+
+            // Count odd numbers
+            if (arr[r] % 2 != 0) {
+                count++;
+            }
+
+            // Shrink the window if odd count exceeds k
+            while (count > k) {
+                if (arr[l] % 2 != 0) {
+                    count--;
+                }
+                l++;
+            }
+
+            // Update maximum length
+            ans = Math.max(ans, r - l + 1);
+        }
+
+        System.out.println(ans);
+    }
+}
